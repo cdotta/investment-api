@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CandlestickData {
+  close: String!
+  closeTime: Float!
+  high: String!
+  low: String!
+  numberOfTrades: Float!
+  open: String!
+  openTime: Float!
+  quoteAssetVolume: String!
+  volume: String!
+}
+
+input ChartDataInput {
+  endTime: Float
+  interval: String!
+  limit: Float
+  source: ChartDataSource!
+  startTime: Float
+  symbol: String!
+}
+
+"""ChartDataSource"""
+enum ChartDataSource {
+  Binance
+}
+
+type Query {
+  chartData(chartDataInput: ChartDataInput!): [CandlestickData!]!
+}
