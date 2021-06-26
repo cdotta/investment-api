@@ -28,6 +28,15 @@ enum ChartDataSource {
   Binance
 }
 
+type Investment {
+  amount: Float!
+  destination: String!
+  externalFees: Float!
+  id: String!
+  internalFees: Float!
+}
+
 type Query {
   chartData(chartDataInput: ChartDataInput!): [CandlestickData!]!
+  investments: [Investment!]!
 }
